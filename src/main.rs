@@ -653,6 +653,8 @@ impl Build {
 
             args.push("-Zbuild-std=core,alloc");
             args.push("-Zbuild-std-features=panic_immediate_abort");
+            arg.push("-Zunstable-options");
+            
         }
 
         let envs = if self.device {
@@ -664,7 +666,7 @@ impl Build {
                     "-Ctarget-feature=-fp64", // Rev A hardware seems to not have 64-bit floating point support
                     "-Clink-args=--emit-relocs",
                     "-Crelocation-model=pic",
-                    "-Cpanic=abort",
+                    "-Cpanic=immediate-abort",
                 ]
                 .join(" "),
             );
