@@ -651,7 +651,6 @@ impl Build {
             args.push("--target");
             args.push("thumbv7em-none-eabihf");
 
-            args.push("-Zunstable-options");
             args.push("-Zbuild-std=core,alloc,panic_abort");
                   
         }
@@ -661,6 +660,7 @@ impl Build {
             map.insert(
                 "RUSTFLAGS",
                 [
+                    "-Zunstable-options",
                     "-Ctarget-cpu=cortex-m7",
                     "-Ctarget-feature=-fp64", // Rev A hardware seems to not have 64-bit floating point support
                     "-Clink-args=--emit-relocs",
