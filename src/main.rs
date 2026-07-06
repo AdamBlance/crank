@@ -653,7 +653,7 @@ impl Build {
 
             args.push("-Zbuild-std=core,alloc");
             args.push("-Zbuild-std-features=panic_immediate_abort");
-            arg.push("-Zunstable-options");
+            args.push("-Zunstable-options");
             
         }
 
