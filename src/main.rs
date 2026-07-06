@@ -651,9 +651,10 @@ impl Build {
             args.push("--target");
             args.push("thumbv7em-none-eabihf");
 
+            args.push("-Zunstable-options");
             args.push("-Zbuild-std=core,alloc");
             args.push("-Zbuild-std-features=panic_immediate_abort");
-            args.push("-Zunstable-options");
+            
             
         }
 
